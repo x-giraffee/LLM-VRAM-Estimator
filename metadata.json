@@ -1,0 +1,5 @@
+{
+  "name": "LLM VRAM Estimator",
+  "description": "A visualized GPU memory calculator for Large Language Model inference, explaining the principles of VRAM usage including Weights, KV Cache, and Activation Overhead.",
+  "requestFramePermissions": []
+}
