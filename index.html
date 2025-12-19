@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LLM VRAM Estimator</title>
+    <title>LLM VRAM Estimator | 大模型显存计算器</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       /* Custom scrollbar for better aesthetics */
@@ -26,6 +26,11 @@
       .preserve-3d {
         transform-style: preserve-3d;
       }
+
+      /* Fix for potential white flash on load */
+      body {
+        background-color: #f8fafc;
+      }
     </style>
   <script type="importmap">
 {
@@ -39,12 +44,16 @@
     "recharts": "https://esm.sh/recharts@2.12.0?deps=react@18.2.0,react-dom@18.2.0,lodash@4.17.21",
     "lodash": "https://esm.sh/lodash@4.17.21",
     "lodash/": "https://esm.sh/lodash@4.17.21/",
-    "lucide-react": "https://esm.sh/lucide-react@0.300.0?deps=react@18.2.0"
+    "lucide-react": "https://esm.sh/lucide-react@0.300.0?deps=react@18.2.0",
+    "vite": "https://esm.sh/vite@^7.3.0",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
   }
 }
 </script>
 </head>
   <body class="bg-slate-50 text-slate-900 font-sans antialiased">
     <div id="root"></div>
+    <!-- 关键修复：显式引入入口 TSX 文件，路径使用相对路径 ./ -->
+    <script type="module" src="./index.tsx"></script>
   </body>
 </html>
